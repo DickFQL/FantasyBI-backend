@@ -29,9 +29,6 @@ public class DirectProducer {
             channel.basicPublish(EXCHANGE_NAME, routeKey, null, message.getBytes("UTF-8"));
             System.out.println(" [x] Sent '" + message + " to " + routeKey + "'");
         }
-
-
-
     }
   }
   //..

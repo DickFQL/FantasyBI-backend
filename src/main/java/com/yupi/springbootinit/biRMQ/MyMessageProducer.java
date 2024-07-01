@@ -1,19 +1,19 @@
 package com.yupi.springbootinit.biRMQ;
 
-
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
 @Component
-public class MyMessagePro {
+public class MyMessageProducer {
 
     @Resource
     private RabbitTemplate rabbitTemplate;
 
-    void sendMessage(){
-
+    public void sendMessage(String exchange, String routingKey, String message){
+        //routingKey
+        rabbitTemplate.convertAndSend(exchange,routingKey,message);
     }
 
 }
