@@ -30,8 +30,6 @@ public class RedisLimiterManager {
         boolean canOp = rateLimiter.tryAcquire(1);
         ThrowUtils.throwIf(!canOp, ErrorCode.TOO_MANY_REQUEST);
 
-
-
     }
 
 }
